@@ -38,12 +38,14 @@
     {% include template_name_js %}
   </script>
   <script>
-    var auth_wrapper = document.getElementsByClassName("auth-wrapper")[0]
-    auth_wrapper.innerHTML += `
-      <a href="{{ login_url }}?next={{ request_path }}" data-sw-translate>
-        <button class="btn authorize locked"><span style="padding:0">Django Login</span></button>
-      </a>
-      `
+    setTimeout(function () {
+      var auth_wrapper = document.getElementsByClassName("auth-wrapper")[0]
+      auth_wrapper.innerHTML += `
+        <a href="{{ login_url }}?next={{ request_path }}" data-sw-translate>
+          <button class="btn authorize locked"><span style="padding:0">Django Login</span></button>
+        </a>
+        `
+    }, 1000);
   </script>
   {% endif %}
 </body>
