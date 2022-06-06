@@ -25,6 +25,17 @@
       margin: 0;
     }
   </style>
+  <script>
+    setTimeout(function () {
+      var auth_wrapper = document.getElementsByClassName("auth-wrapper")[0]
+      console.log(auth_wrapper)
+      auth_wrapper.innerHTML += `
+        <a href="{{ login_url }}?next={{ request_path }}" data-sw-translate>
+          <button class="btn authorize locked"><span style="padding:0">Django Login</span></button>
+        </a>
+        `
+    }, 2000);
+  </script>
 </head>
 
 <body>
@@ -36,16 +47,6 @@
   {% else %}
   <script>
     {% include template_name_js %}
-  </script>
-  <script>
-    setTimeout(function () {
-      var auth_wrapper = document.getElementsByClassName("auth-wrapper")[0]
-      auth_wrapper.innerHTML += `
-        <a href="{{ login_url }}?next={{ request_path }}" data-sw-translate>
-          <button class="btn authorize locked"><span style="padding:0">Django Login</span></button>
-        </a>
-        `
-    }, 1000);
   </script>
   {% endif %}
 </body>
