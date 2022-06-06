@@ -35,6 +35,7 @@
       padding: 4px;
     }
   </style>
+  {% if login_url %}
   <script>
     setTimeout(function () {
       var auth_wrapper = document.getElementsByClassName("auth-wrapper")[0]
@@ -45,6 +46,7 @@
         `
     }, 2000);
   </script>
+  {% endif %}
 </head>
 
 <body>
