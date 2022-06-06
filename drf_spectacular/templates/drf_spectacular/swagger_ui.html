@@ -24,29 +24,15 @@
       background: #fafafa;
       margin: 0;
     }
-
-    .django-login {
-      background-color: transparent !important;
-      border-color: #49cc90 !important;
-      color: #49cc90 !important;
-      display: inline !important;
-      line-height: 1 !important;
-      margin-right: 10px !important;
-      padding: 9px 23px !important;
-    }
-
-    .django-login:hover {
-      text-decoration: none;
-    }
   </style>
   {% if login_url %}
   <script>
     setTimeout(function () {
-      var auth_wrapper = document.getElementsByClassName("schemes wrapper")[0]
+      var hgroup = document.getElementsByClassName("main")[0]
       auth_wrapper.innerHTML += `
         <div>
-          <a href="{{ login_url }}?next={{ request_path }}" data-sw-translate>
-            <button class="btn django-login"><span>Django Login</span></button>
+          <a href="{{ login_url }}?next={{ request_path }}" class="link" data-sw-translate>
+            <span class="url">Django Login</span>
           </a>
         </div>
         `
