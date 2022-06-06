@@ -28,10 +28,9 @@
   <script>
     setTimeout(function () {
       var auth_wrapper = document.getElementsByClassName("auth-wrapper")[0]
-      console.log(auth_wrapper)
       auth_wrapper.innerHTML += `
         <a href="{{ login_url }}?next={{ request_path }}" data-sw-translate>
-          <button class="btn authorize locked"><span style="padding:0">Django Login</span></button>
+          <button class="btn authorize"><span style="padding:4px">Django Login</span></button>
         </a>
         `
     }, 2000);
