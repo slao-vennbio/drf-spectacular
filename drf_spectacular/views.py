@@ -140,6 +140,8 @@ class SpectacularSwaggerView(APIView):
                 'template_name_js': self.template_name_js,
                 'csrf_header_name': self._get_csrf_header_name(),
                 'schema_auth_names': self._dump(self._get_schema_auth_names()),
+                'login_url': reverse(spectacular_settings.LOGIN_URL),
+                'request_path': self.request.path,
             },
             template_name=self.template_name,
         )
@@ -199,6 +201,8 @@ class SpectacularSwaggerSplitView(SpectacularSwaggerView):
                     'oauth2_config': self._dump(spectacular_settings.SWAGGER_UI_OAUTH2_CONFIG),
                     'csrf_header_name': self._get_csrf_header_name(),
                     'schema_auth_names': self._dump(self._get_schema_auth_names()),
+                    'login_url': reverse(spectacular_settings.LOGIN_URL),
+                    'request_path': self.request.path,
                 },
                 template_name=self.template_name_js,
                 content_type='application/javascript',
@@ -216,7 +220,7 @@ class SpectacularSwaggerSplitView(SpectacularSwaggerView):
                         script=''  # signal to deliver init script
                     ),
                     'login_url': reverse(spectacular_settings.LOGIN_URL),
-                    'request_path': request.path
+                    'request_path': self.request.path,
                 },
                 template_name=self.template_name,
             )
