@@ -29,7 +29,7 @@
   <script>
     setTimeout(function () {
       var hgroup = document.getElementsByClassName("main")[0]
-      auth_wrapper.innerHTML += `
+      hgroup.innerHTML += `
         <div>
           <a href="{{ login_url }}?next={{ request_path }}" class="link" data-sw-translate>
             <span class="url">Django Login</span>
