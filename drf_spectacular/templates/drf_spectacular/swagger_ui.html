@@ -24,13 +24,18 @@
       background: #fafafa;
       margin: 0;
     }
+
+    .django-login {
+      padding-top: 15px;
+      font-weight: bold;
+    }
   </style>
   {% if login_url %}
   <script>
     setTimeout(function () {
       var hgroup = document.getElementsByClassName("main")[0]
       hgroup.innerHTML += `
-        <div>
+        <div class="django-login">
           <a href="{{ login_url }}?next={{ request_path }}" class="link" data-sw-translate>
             <span class="url" style="font-size: 18px;">Django Login</span>
           </a>
